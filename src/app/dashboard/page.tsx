@@ -1,15 +1,18 @@
-import { WidgetItem } from "../components";
-
+import { WidgetItem } from "../../components";
+export const metadata = {
+    title: 'Dashboard',
+    description: 'SEO title'
+}
 export default function DashboardPage() {
-  return (
+    return (
 
-    <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 bg-slate-300 ">
-        <WidgetItem />
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 ">
+            <WidgetItem />
 
-      
 
-        
-    </div>
 
-  );
+
+        </div>
+
+    );
 }

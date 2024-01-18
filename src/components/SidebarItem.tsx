@@ -16,13 +16,16 @@ export const SidebarItem = ({icon, path,title }: Props) => {
 
     return (
        
-                <li key={''}>
+                <li>
                     <Link
-                        href={''}
-                        className= {`relative px-4 py-3 flex items-center space-x-4 rounded-xl  ${ (currentpath === item.ruta) ? 'text-white bg-gradient-to-r from-sky-600 to-cyan-400' : ''} `}
+                        href={path}
+                        className= {`
+                        relative px-4 py-3 flex items-center space-x-4 rounded-xl 
+                        hover: bg-gradient-to-r hover:bg-sky-600 hover:text-white
+                        ${ (currentpath === path) ? 'text-white bg-gradient-to-r from-sky-500 to-cyan-300 font-bold' : ''} `}
                     >
-                        <CiBookmarkCheck size={30} />
-                        <span className="-mr-1 font-medium">{''}</span>
+                        {icon}
+                        <span className="group-hover:text-white-700">{title}</span>
                     </Link>
                 </li>
             )

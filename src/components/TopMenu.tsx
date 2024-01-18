@@ -1,11 +1,17 @@
-import { CiBellOn, CiBookmarkCheck, CiChat1, CiLogout, CiMenuBurger, CiSearch } from 'react-icons/ci';
+'use client'
+import { usePathname } from 'next/navigation';
+import { CiBellOn, CiChat1, CiMenuBurger, CiSearch } from 'react-icons/ci';
 
 export const TopMenu = () => {
+const customPathame = usePathname();
+const nombrePagina = customPathame.split('/').at(-1);
+
+
     return (
         <div className="sticky z-10 top-0 h-16 border-b bg-white lg:py-2.5">
 
             <div className="px-6 flex items-center justify-between space-x-4">
-                <h5 hidden className="text-2xl text-gray-600 font-medium lg:block">Dashboard</h5>
+                <h5 hidden className="text-2xl text-gray-600 lg:block capitalize font-medium">{nombrePagina}</h5>
                 <button className="w-12 h-16 -mr-2 border-r lg:hidden">
                     <CiMenuBurger size={30} />
                 </button>
