@@ -1,7 +1,7 @@
 import prisma from '@/lib/prisma'
+import { Todo } from '@prisma/client';
 import { NextResponse, NextRequest } from 'next/server'
 import * as yup from 'yup';
-
 
 
 export async function GET(request: Request) {
@@ -37,9 +37,9 @@ const postSchema = yup.object({
 export async function POST(request: Request) {
 
     try {
-        const {description, complete} = await postSchema.validate(await request.json());
+        const { description, complete } = await postSchema.validate(await request.json());
 
-        const todo = await prisma.todo.create({ data: {description, complete} })
+        const todo = await prisma.todo.create({ data: { description, complete } })
 
         return NextResponse.json({ todo })
     } catch (error) {
@@ -47,5 +47,27 @@ export async function POST(request: Request) {
     }
 }
 
+export async function DELETE(request: Request) {
 
+    const todos = await prisma.todo.findMany({
+        where: {
+            complete: true
+        }
+    });
+    
 
+    if (todos.toString() === '') {
+        return NextResponse.json(
+            {
+                message: `No existen ToDos completados`
+            },
+            { status: 404 })
+    }
+        const deleteTodo = await prisma.todo.deleteMany({
+            where: { complete: true}
+        })
+
+    return NextResponse.json(
+        { message: `Se borraron los todos: ${todos.map( todo => todo.description)}`} ,
+        { status: 200 })
+}
