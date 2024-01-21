@@ -55,7 +55,7 @@ export const SidebarPage = () => {
                         width={120}
                         height={120}
                     />
-                    <h5 className="hidden mt-4 text-xl font-semibold text-gray-600 lg:block">Cynthia J. Watts</h5>
+                    <h5 className="hidden mt-4 text-xl font-semibold text-gray-600 lg:block">Wuilmer A. Carbajal</h5>
                     <span className="hidden text-gray-400 lg:block">Admin</span>
                 </div>
 
