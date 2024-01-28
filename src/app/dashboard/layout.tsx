@@ -1,7 +1,8 @@
+import { SidebarPage, TopMenu } from "@/components";
 
 
 
-import { SidebarPage, TopMenu } from '../../components';
+
 
 
 

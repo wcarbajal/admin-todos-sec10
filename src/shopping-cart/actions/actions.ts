@@ -12,7 +12,7 @@ export const getCookieCart = (): { [id: string]: number } => {
     return {};
 }
 
-export const addProductCart = (id: string) => {
+export const addProductToCart = (id: string) => {
     
     const cookieCart = getCookieCart();
     
@@ -28,10 +28,21 @@ export const addProductCart = (id: string) => {
 export const removeProductFromCart = (id: string) => {
     
     const cookieCart = getCookieCart();
+    delete cookieCart[id];
+    setCookie('cart', JSON.stringify(cookieCart));
 
-    if (cookieCart[id]) {
-        cookieCart[id] = 0;
-    } 
+}
+
+export const removeSingleItemFromCart = (id: string) => {
+    const cookieCart = getCookieCart();
+    
+    
+    if (cookieCart[id] === 1 ) {
+        delete cookieCart[id];
+    } else {
+        cookieCart[id] = cookieCart[id] - 1;
+    }
+
     setCookie('cart', JSON.stringify(cookieCart));
 
 }

@@ -2,7 +2,7 @@
 import Image from "next/image";
 
 import { IoAddCircleOutline, IoRemove } from "react-icons/io5";
-import {  } from "../actions/actions";
+import { removeSingleItemFromCart, addProductToCart } from "../actions/actions";
 
 import { useRouter } from "next/navigation";
 import { Product } from "@/products/data/products";
@@ -18,12 +18,12 @@ export const ItemCard = ({ product, quantity }: Props) => {
   const router = useRouter();
 
   function onAddToCart() {
-    //TODO: addProductToCart(product.id);
+    addProductToCart(product.id);
     router.refresh();
   }
 
   function onRemoveItem() {
-    //TODO: removeSingleItemFromCart(product.id);
+    removeSingleItemFromCart(product.id);
     router.refresh();
   }
 
@@ -73,7 +73,7 @@ export const ItemCard = ({ product, quantity }: Props) => {
         </button>
         <span className="text-2xl text-white mx-10">{quantity}</span>
         <button
-          onClick={onRemoveItem}
+          onClick={ onRemoveItem }
           className="text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800">
             <IoRemove size={25} />
         </button>

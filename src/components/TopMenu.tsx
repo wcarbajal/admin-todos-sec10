@@ -1,8 +1,7 @@
 
 import { cookies } from 'next/headers';
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
-import { CiBellOn, CiChat1, CiMenuBurger, CiSearch, CiShoppingBasket } from 'react-icons/ci';
+import { CiChat1, CiMenuBurger, CiSearch, CiShoppingBasket } from 'react-icons/ci';
 
 const getTotalCount = (cart: { [id: string]: number}): number => {
     let items = 0;
@@ -24,7 +23,7 @@ export const TopMenu = () => {
     const totalItems = getTotalCount(cart);
 
 
-    console.log(cart)
+    
 
     return (
         <div className="sticky z-10 top-0 h-16 border-b bg-white lg:py-2.5">

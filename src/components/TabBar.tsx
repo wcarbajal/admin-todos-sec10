@@ -1,6 +1,8 @@
 'use client'
 
 import { setCookie } from "cookies-next";
+import { useRouter } from "next/navigation";
+
 import { useState } from "react";
 
 // https://tailwindcomponents.com/component/radio-buttons-1
@@ -15,12 +17,14 @@ export const TabBar = ({tabOptions = [1, 2, 3, 4], currentTab: currentTab = 1}: 
 
     let numeroCol = tabOptions.length;
     
+  const router = useRouter()
 
   const [selected, setSelected] = useState(currentTab)
 
   const onTabSelected = ( tab: number) => {
     setSelected( tab );
     setCookie('selectedTab', tab.toString());
+    router.refresh();
 
   }
 

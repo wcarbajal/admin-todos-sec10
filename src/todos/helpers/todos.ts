@@ -9,7 +9,7 @@ export const updateTodo = async(id: string, complete: boolean): Promise<Todo> =>
         headers: { 'Content-Type': 'application/json'}
     }).then(res => res.json());
     
-    console.log(todo);
+    
 
     return todo;
 
@@ -24,7 +24,7 @@ export const createTodo = async(description: string): Promise<Todo> =>{
         headers: { 'Content-Type': 'application/json'}
     }).then(res => res.json());
     
-    console.log(todo);
+    
 
     return todo;
 
@@ -37,7 +37,7 @@ export const deleteTodosComplete = async(): Promise<Todo> =>{
         headers: { 'Content-Type': 'application/json'}
     }).then(res => res.json());
     
-    console.log(todos);
+    
 
     return todos;
 
