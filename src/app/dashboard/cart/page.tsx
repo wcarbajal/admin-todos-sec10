@@ -6,7 +6,7 @@ import { WidgetItem } from "@/components";
 
 export const metadata = {
  title: 'Carrito de compras',
- description: 'SEO Title',
+ description: 'compras',
 };
 
 interface ProductInCard {
