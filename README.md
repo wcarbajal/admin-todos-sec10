@@ -15,7 +15,7 @@ Pasos para levatar la app en desarrollo
 
 5. Ejecutar el comenado ``` npm run dev ```
 
-6. Ejecutar los comandos de primas
+6. Ejecutar los comandos de primas -
 
     ``` npx prisma migrate dev ```<br>
     ``` npx prisma generate ```
