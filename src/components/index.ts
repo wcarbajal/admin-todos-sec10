@@ -1,5 +1,8 @@
-export * from './Sidebar';
-export * from './SidebarItem';
+export { TabBar } from './TabBar';
 export * from './TopMenu';
 export * from './WidgetItem';
-export { TabBar } from './TabBar';
+export * from './sidebar/Sidebar';
+export { LogOutButton} from './sidebar/LogOutButton';
+export * from './sidebar/SidebarItem';
+
+
