@@ -10,8 +10,8 @@ export const metadata = {
 export default async function DashboardPage() {
 
     const session = await getServerSession(authOptions);
-    console.log(session)
-    
+
+
 
     if (!session) {
         redirect('/api/auth/signin');
@@ -26,9 +26,9 @@ export default async function DashboardPage() {
                     <span> {session.user?.name}</span>
                     <span> {session.user?.email}</span>
                     <span> {session.user?.image}</span>
-                    <span> { JSON.stringify(session) }</span>
-                    
-                    
+                    <span> {JSON.stringify(session)}</span>
+                    <span> {session.user?.isActive}</span>
+
                 </div>
             </WidgetItem>
 

@@ -1,10 +1,14 @@
+
 import Link from 'next/link'
 import { redirect } from 'next/navigation'
 
 export default function Home() {
-    redirect('/dashboard')
+   // redirect('/dashboard')
 
   return (
+
+    <>
+    
     <div className='flex flex-col h-100hv items-center justify-center '>
       <h1 className='text-5xl'>Hola mundo</h1>
       
@@ -14,5 +18,8 @@ export default function Home() {
           Dashboard
       </Link>
     </div>
+    
+    </>
+
   )
 }

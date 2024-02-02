@@ -10,50 +10,10 @@ import { authOptions } from '@/app/api/auth/[...nextauth]/route';
 import { redirect } from 'next/navigation';
 import { SidebarItem } from './SidebarItem';
 import { LogOutButton } from './LogoutButton';
-
-export const menuItems = [
-    {
-        icon: <IoCalendarOutline />,
-        title: 'Dashboard',
-        path: '/dashboard'
-
-    },
-    {
-        icon: <IoCheckboxOutline />,
-        title: 'Rest TODOS',
-        path: '/dashboard/rest-todos'
-
-    },
-    {
-        icon: <IoListOutline />,
-        title: 'Server Actions',
-        path: '/dashboard/server-actions'
-
-    },
-    {
-        icon: <IoCodeWorkingOutline />,
-        title: 'Cookies',
-        path: '/dashboard/cookies'
-
-    },
-    {
-        icon: <IoClipboardOutline />,
-        title: 'Products',
-        path: '/dashboard/products'
-
-    },
-    {
-        icon: <IoPersonOutline />,
-        title: 'Perfil',
-        path: '/dashboard/profile'
-
-    }
+import { menuItems } from '..';
 
 
-]
-
-
-export const SidebarPage = async () => {
+export const SidebarSimpPage = async () => {
 
     const session = await getServerSession(authOptions);
     const avatarUrl = (session?.user?.image)

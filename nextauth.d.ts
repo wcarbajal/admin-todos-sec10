@@ -7,6 +7,7 @@ interface IUser extends DefaultUser {
    * Roles del usuario
    */
   roles?: string[];
+  isActive?: boolean;
   /**
    * Agregar cualquier otro campo que tu manejas
    */

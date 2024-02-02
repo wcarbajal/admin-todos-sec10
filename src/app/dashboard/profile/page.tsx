@@ -8,7 +8,7 @@ export default function ProfilePage() {
     const { data: session} = useSession();
 
     useEffect(() => {
-      console.log("Cliente Side");
+      
     }, [])
     
   return (
@@ -22,6 +22,7 @@ export default function ProfilePage() {
         <span>{ session?.user?.image ?? 'No image'}</span>
         <span>{ session?.user?.id ?? 'No UUID'}</span>
         <span className="capitalize">{ session?.user?.roles?.join(', ') ?? 'No roles'}</span>
+        <span>{ session?.user?.isActive }</span>
 
       </div>
     </div>
